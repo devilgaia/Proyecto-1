@@ -14,7 +14,7 @@ class DefaultController extends Controller
     public function seccionAction($seccion)
     {
         
-        //-----$secciones = array('portada','accidentes','atto','noticias','practicar','acerca','contacto');
+        //$secciones = array('portada','accidentes','atto','noticias','practicar','acerca','contacto');
         $secciones = $this->getDoctrine()->getRepository('p2Bundle:secciones')->findAll();
         
         $contenido = $this->renderView('p2Bundle:secciones:'.$seccion.'.html.twig', array('seccion' => $seccion,'secciones' => $secciones));
